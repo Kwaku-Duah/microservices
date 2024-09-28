@@ -1,0 +1,15 @@
+server:
+  port: 8085
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product-service
+          uri: http://localhost:8082  # Forward requests to Product Service
+          predicates:
+            - Path=/api/products/**
+        - id: order-service
+          uri: http://localhost:8083  # Forward requests to Order Service
+          predicates:
+            - Path=/api/orders/**
