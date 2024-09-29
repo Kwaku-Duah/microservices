@@ -16,6 +16,7 @@
         <module>api-gateway/gateway</module>
         <module>order-service/order</module>
         <module>product-service/product</module>
+        <module>eureka-server</module>
     </modules>
 
     <!-- Properties to set common project configurations -->
@@ -96,7 +97,13 @@
 
 
     <dependencies>
-    
+
+  
+    <dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-netflix-eureka-server</artifactId>
+    <version>3.1.2</version>
+</dependency>
 
    
     </dependencies>
