@@ -29,6 +29,10 @@ spring:
           uri: lb://order-service
           predicates:
             - Path=/api/orders/**
+        - id: rabbitmq
+          uri: lb://rabbitmq
+          predicates:
+            - Path=/api/rabbitmq/**  # RabbitMQ service routing
 
 eureka:
   client:

@@ -1,0 +1,21 @@
+server:
+  port: 8089
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    queue: orders_queue
+    exchange: orders_exchange
+    routing: order.created
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: rabbitmq-service
+    appname: rabbitmq
